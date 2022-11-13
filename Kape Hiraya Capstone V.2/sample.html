@@ -1,0 +1,87 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header li {
+    list-style: none;
+  }
+  header {
+    display: flex;
+    border: 1px solid red;
+    justify-content: flex-end;
+  }
+
+  header li span {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  }
+  header li {
+    padding: 5px 10px;
+    border: 1px solid red;
+    cursor: pointer;
+  }
+
+  .dropdownList {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 250px;
+  }
+
+  .dropdownList a {
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+
+  .dropdownList a:hover {
+    background: #f2f2f2;
+  }
+
+  .headerSection {
+    position: relative;
+  }
+
+  .active {
+    visibility: hidden;
+  }
+</style>
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+
+<div class="headerSection">
+  <header>
+    <li class="">
+      <span class="material-symbols-outlined"> mail </span>
+    </li>
+    <li class="profileNav">
+      <span class="material-symbols-outlined"> account_circle </span>
+    </li>
+  </header>
+
+  <div class="dropdownList active">
+    <a href="">Profile</a>
+    <a href="">Messages</a>
+    <a href="">Logout</a>
+  </div>
+</div>
+
+<script>
+  let profileNav = document.querySelector(".profileNav");
+  let dropdownList = document.querySelector(".dropdownList");
+
+  profileNav.addEventListener("click", () => {
+    dropdownList.classList.toggle("active");
+  });
+</script>
